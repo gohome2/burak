@@ -23,3 +23,17 @@ console.log(palindromCheck("son")); // false
 //     };
 //   });
 // }
+
+/*  PROJECT STANDARTS
+
+ - Logging standards    
+
+ - Naming standards:                            
+   function, method, variable => CAMEL case     -   goHome
+   class => PASCAL                              -   MemberStatus
+   folder => KEBAB                              -
+   css class => SNAKE                           -   button_style
+
+ - Error handling
+
+*/
