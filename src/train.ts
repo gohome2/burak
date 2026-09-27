@@ -1,13 +1,27 @@
-//---------N Task--------//
+//---------O Task--------//
+function calculateSumOfNumbers(values: unknown[]): number {
+  let sum = 0;
 
-function palindromCheck(word: string): boolean {
-  const reversedWord: string = word.split("").reverse().join("");
+  values.forEach((value) => {
+    if (typeof value === "number") {
+      sum = sum + value;
+    }
+  });
 
-  return word === reversedWord;
+  return sum;
 }
 
-console.log(palindromCheck("dad")); // true
-console.log(palindromCheck("son")); // false
+console.log(calculateSumOfNumbers([10, "10", { son: 10 }, true, 35])); // 45
+//---------N Task--------//
+
+// function palindromCheck(word: string): boolean {
+//   const reversedWord: string = word.split("").reverse().join("");
+
+//   return word === reversedWord;
+// }
+
+// console.log(palindromCheck("dad")); // true
+// console.log(palindromCheck("son")); // false
 
 //
 // type SquareNumber = {
