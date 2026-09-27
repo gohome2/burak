@@ -37,3 +37,10 @@ console.log(palindromCheck("son")); // false
  - Error handling
 
 */
+
+/**
+ * Traditional API
+ * Rest API
+ * GraphQL
+ * ...
+ */
