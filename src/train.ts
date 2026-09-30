@@ -1,17 +1,32 @@
-//---------O Task--------//
-function calculateSumOfNumbers(values: unknown[]): number {
-  let sum = 0;
+//---------P Task--------//
+function objectToArray(obj: { [key: string]: unknown }): [string, unknown][] {
+  const result: [string, unknown][] = [];
+  const keys = Object.keys(obj);
 
-  values.forEach((value) => {
-    if (typeof value === "number") {
-      sum = sum + value;
-    }
-  });
+  for (const key of keys) {
+    const value = obj[key];
+    result.push([key, value]);
+  }
 
-  return sum;
+  return result;
+
+  console.log(objectToArray({ a: 10, b: 20 }));
 }
 
-console.log(calculateSumOfNumbers([10, "10", { son: 10 }, true, 35])); // 45
+//---------O Task--------//
+// function calculateSumOfNumbers(values: unknown[]): number {
+//   let sum = 0;
+
+//   values.forEach((value) => {
+//     if (typeof value === "number") {
+//       sum = sum + value;
+//     }
+//   });
+
+//   return sum;
+// }
+
+// console.log(calculateSumOfNumbers([10, "10", { son: 10 }, true, 35])); // 45
 //---------N Task--------//
 
 // function palindromCheck(word: string): boolean {
