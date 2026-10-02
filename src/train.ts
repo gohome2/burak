@@ -73,3 +73,10 @@ function objectToArray(obj: { [key: string]: unknown }): [string, unknown][] {
  * GraphQL
  * ...
  */
+
+/**
+ * Traditional (FD) => SSR (Admin) => EJS framework
+ * Modern (FD)      => SPA  (User application) => (.json) REACT(Library)
+ *
+ * Frontend Development=(FD)
+ */

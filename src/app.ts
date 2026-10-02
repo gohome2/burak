@@ -20,7 +20,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 /** 4-ROUTERS **/ // SPA: REACT        rest API
-app.use("/admin", routerAdmin); // EJS            BSSR: EJS
-app.use("/", router); // REACT          Middleware Design Pattern
+app.use("/admin", routerAdmin); // EJS   / SSR: EJS
+app.use("/", router); //           REACT / SSA    Middleware Design Pattern
 
 export default app;
