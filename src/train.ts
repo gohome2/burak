@@ -1,17 +1,25 @@
 //---------P Task--------//
-function objectToArray(obj: { [key: string]: unknown }): [string, unknown][] {
-  const result: [string, unknown][] = [];
-  const keys = Object.keys(obj);
-
-  for (const key of keys) {
-    const value = obj[key];
-    result.push([key, value]);
-  }
-
-  return result;
-
-  console.log(objectToArray({ a: 10, b: 20 }));
+function hasProperty(obj: object, property: string): boolean {
+  return property in obj;
 }
+
+console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); // true
+console.log(hasProperty({ name: "BMW", model: "M3" }, "year")); // false
+
+//---------P Task--------//
+// function objectToArray(obj: { [key: string]: unknown }): [string, unknown][] {
+//   const result: [string, unknown][] = [];
+//   const keys = Object.keys(obj);
+
+//   for (const key of keys) {
+//     const value = obj[key];
+//     result.push([key, value]);
+//   }
+
+//   return result;
+
+//   console.log(objectToArray({ a: 10, b: 20 }));
+// }
 
 //---------O Task--------//
 // function calculateSumOfNumbers(values: unknown[]): number {
