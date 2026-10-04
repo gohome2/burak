@@ -1,10 +1,24 @@
 //---------P Task--------//
-function hasProperty(obj: object, property: string): boolean {
-  return property in obj;
+function calculate(text: string): number {
+  const parts = text.split("+");
+  let sum = 0;
+
+  for (const part of parts) {
+    sum += Number(part);
+  }
+
+  return sum;
 }
 
-console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); // true
-console.log(hasProperty({ name: "BMW", model: "M3" }, "year")); // false
+console.log(calculate("1+3"));
+
+//---------P Task--------//
+// function hasProperty(obj: object, property: string): boolean {
+//   return property in obj;
+// }
+
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); // true
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "year")); // false
 
 //---------P Task--------//
 // function objectToArray(obj: { [key: string]: unknown }): [string, unknown][] {
@@ -88,3 +102,8 @@ console.log(hasProperty({ name: "BMW", model: "M3" }, "year")); // false
  *
  * Frontend Development=(FD)
  */
+
+/*
+request join
+self destroy
+*/
