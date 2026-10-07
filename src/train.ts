@@ -89,21 +89,29 @@ console.log(calculate("1+3"));
 
 */
 
-/**
+/**Request:
  * Traditional API
  * Rest API
  * GraphQL
  * ...
  */
 
-/**
+/**Frontend Development:
  * Traditional (FD) => SSR (Admin) => EJS framework
  * Modern (FD)      => SPA  (User application) => (.json) REACT(Library)
  *
  * Frontend Development=(FD)
  */
 
-/*
+/* Cookies:
 request join
 self destroy
+*/
+
+/* Validation:
+
+Frontend validation 
+Backend validation 
+Database validation 
+
 */
