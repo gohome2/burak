@@ -1,16 +1,34 @@
-//---------P Task--------//
-function calculate(text: string): number {
-  const parts = text.split("+");
-  let sum = 0;
+//---------S Task--------//
+function missingNumber(numbers: number[]): number {
+  let fullSum = 0;
+  let arraySum = 0;
 
-  for (const part of parts) {
-    sum += Number(part);
+  for (let i = 0; i <= numbers.length; i++) {
+    fullSum += i;
   }
 
-  return sum;
+  for (const number of numbers) {
+    arraySum += number;
+  }
+
+  return fullSum - arraySum;
 }
 
-console.log(calculate("1+3"));
+console.log(missingNumber([3, 0, 1]));
+
+//---------P Task--------//
+// function calculate(text: string): number {
+//   const parts = text.split("+");
+//   let sum = 0;
+
+//   for (const part of parts) {
+//     sum += Number(part);
+//   }
+
+//   return sum;
+// }
+
+// console.log(calculate("1+3"));
 
 //---------P Task--------//
 // function hasProperty(obj: object, property: string): boolean {
