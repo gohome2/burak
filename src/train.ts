@@ -1,20 +1,28 @@
-//---------S Task--------//
-function missingNumber(numbers: number[]): number {
-  let fullSum = 0;
-  let arraySum = 0;
+//---------T Task--------//
+function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+  const merged: number[] = [...arr1, ...arr2];
 
-  for (let i = 0; i <= numbers.length; i++) {
-    fullSum += i;
-  }
-
-  for (const number of numbers) {
-    arraySum += number;
-  }
-
-  return fullSum - arraySum;
+  return merged.sort((a, b) => a - b);
 }
 
-console.log(missingNumber([3, 0, 1]));
+console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
+//---------S Task--------//
+// function missingNumber(numbers: number[]): number {
+//   let fullSum = 0;
+//   let arraySum = 0;
+
+//   for (let i = 0; i <= numbers.length; i++) {
+//     fullSum += i;
+//   }
+
+//   for (const number of numbers) {
+//     arraySum += number;
+//   }
+
+//   return fullSum - arraySum;
+// }
+
+// console.log(missingNumber([3, 0, 1]));
 
 //---------P Task--------//
 // function calculate(text: string): number {
