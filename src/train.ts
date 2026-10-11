@@ -1,11 +1,11 @@
 //---------T Task--------//
-function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
-  const merged: number[] = [...arr1, ...arr2];
+// function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+//   const merged: number[] = [...arr1, ...arr2];
 
-  return merged.sort((a, b) => a - b);
-}
+//   return merged.sort((a, b) => a - b);
+// }
 
-console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
+// console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
 //---------S Task--------//
 // function missingNumber(numbers: number[]): number {
 //   let fullSum = 0;
@@ -141,3 +141,43 @@ Backend validation
 Database validation 
 
 */
+
+class Coder {
+  name: string = "Odiljon";
+  age: number = 23;
+
+  introduce() {
+    console.log(this.name);
+    console.log(this.age);
+  }
+}
+const student1 = new Coder();
+
+student1.introduce();
+//////////////////////////////
+class Winner {
+  name: string = "Odiljon";
+  age: number = 23;
+
+  introduce() {
+    console.log(
+      `Salom mening ismim ${this.name},\nyoshim ${this.age}da!\nva men software engeneerman! :)\nhaha it worked`,
+    );
+  }
+}
+
+const winner = new Winner();
+winner.introduce();
+///////////////////
+
+class Macbook {
+  name: string = "Macbook";
+  chip: string | number = "M2";
+
+  introduce() {
+    console.log(`this is ${this.name} with ${this.chip} chip `);
+  }
+}
+
+const mac = new Macbook();
+mac.introduce();
