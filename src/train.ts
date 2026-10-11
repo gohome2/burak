@@ -1,3 +1,19 @@
+//---------U Task--------//
+function sumOdds(number: number): number {
+  let count = 0;
+
+  for (let i = 0; i < number; i++) {
+    if (i % 2 !== 0) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+console.log(sumOdds(9));
+console.log(sumOdds(11));
+
 //---------T Task--------//
 // function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
 //   const merged: number[] = [...arr1, ...arr2];
@@ -141,43 +157,3 @@ Backend validation
 Database validation 
 
 */
-
-class Coder {
-  name: string = "Odiljon";
-  age: number = 23;
-
-  introduce() {
-    console.log(this.name);
-    console.log(this.age);
-  }
-}
-const student1 = new Coder();
-
-student1.introduce();
-//////////////////////////////
-class Winner {
-  name: string = "Odiljon";
-  age: number = 23;
-
-  introduce() {
-    console.log(
-      `Salom mening ismim ${this.name},\nyoshim ${this.age}da!\nva men software engeneerman! :)\nhaha it worked`,
-    );
-  }
-}
-
-const winner = new Winner();
-winner.introduce();
-///////////////////
-
-class Macbook {
-  name: string = "Macbook";
-  chip: string | number = "M2";
-
-  introduce() {
-    console.log(`this is ${this.name} with ${this.chip} chip `);
-  }
-}
-
-const mac = new Macbook();
-mac.introduce();
