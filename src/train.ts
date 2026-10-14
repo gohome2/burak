@@ -1,18 +1,34 @@
-//---------U Task--------//
-function sumOdds(number: number): number {
-  let count = 0;
+//---------V Task--------//
+function countChars(text: string): { [key: string]: number } {
+  const result: { [key: string]: number } = {};
 
-  for (let i = 0; i < number; i++) {
-    if (i % 2 !== 0) {
-      count++;
+  for (const char of text) {
+    if (result[char] === undefined) {
+      result[char] = 1;
+    } else {
+      result[char]++;
     }
   }
 
-  return count;
+  return result;
 }
+console.log(countChars("hello"));
 
-console.log(sumOdds(9));
-console.log(sumOdds(11));
+//---------U Task--------//
+// function sumOdds(number: number): number {
+//   let count = 0;
+
+//   for (let i = 0; i < number; i++) {
+//     if (i % 2 !== 0) {
+//       count++;
+//     }
+//   }
+
+//   return count;
+// }
+
+// console.log(sumOdds(9));
+// console.log(sumOdds(11));
 
 //---------T Task--------//
 // function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
