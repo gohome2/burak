@@ -1,18 +1,36 @@
-//---------V Task--------//
-function countChars(text: string): { [key: string]: number } {
-  const result: { [key: string]: number } = {};
+//---------W Task--------//
+function chunkArray(arr: number[], size: number): number[][] {
+  if (!Number.isInteger(size) || size <= 0) {
+    return [];
+  }
 
-  for (const char of text) {
-    if (result[char] === undefined) {
-      result[char] = 1;
-    } else {
-      result[char]++;
-    }
+  const result: number[][] = [];
+
+  for (let i = 0; i < arr.length; i += size) {
+    const chunk = arr.slice(i, i + size);
+    result.push(chunk);
   }
 
   return result;
 }
-console.log(countChars("hello"));
+
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
+
+//---------V Task--------//
+// function countChars(text: string): { [key: string]: number } {
+//   const result: { [key: string]: number } = {};
+
+//   for (const char of text) {
+//     if (result[char] === undefined) {
+//       result[char] = 1;
+//     } else {
+//       result[char]++;
+//     }
+//   }
+
+//   return result;
+// }
+// console.log(countChars("hello"));
 
 //---------U Task--------//
 // function sumOdds(number: number): number {
