@@ -1,20 +1,44 @@
-//---------W Task--------//
-function chunkArray(arr: number[], size: number): number[][] {
-  if (!Number.isInteger(size) || size <= 0) {
-    return [];
+//---------X Task--------//
+function countOccurrences(obj: object, property: string): number {
+  let count = 0;
+
+  for (const [key, value] of Object.entries(obj)) {
+    if (key === property) {
+      count++;
+    }
+
+    if (typeof value === "object" && value !== null) {
+      count += countOccurrences(value, property);
+    }
   }
 
-  const result: number[][] = [];
-
-  for (let i = 0; i < arr.length; i += size) {
-    const chunk = arr.slice(i, i + size);
-    result.push(chunk);
-  }
-
-  return result;
+  return count;
 }
 
-console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
+console.log(
+  countOccurrences(
+    { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } },
+    "model",
+  ),
+);
+
+//---------W Task--------//
+// function chunkArray(arr: number[], size: number): number[][] {
+//   if (!Number.isInteger(size) || size <= 0) {
+//     return [];
+//   }
+
+//   const result: number[][] = [];
+
+//   for (let i = 0; i < arr.length; i += size) {
+//     const chunk = arr.slice(i, i + size);
+//     result.push(chunk);
+//   }
+
+//   return result;
+// }
+
+// console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
 
 //---------V Task--------//
 // function countChars(text: string): { [key: string]: number } {
