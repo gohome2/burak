@@ -1,26 +1,41 @@
 //---------X Task--------//
-function countOccurrences(obj: object, property: string): number {
-  let count = 0;
+function findIntersection(arr1: number[], arr2: number[]): number[] {
+  const result: number[] = [];
 
-  for (const [key, value] of Object.entries(obj)) {
-    if (key === property) {
-      count++;
-    }
-
-    if (typeof value === "object" && value !== null) {
-      count += countOccurrences(value, property);
+  for (const num of arr1) {
+    if (arr2.includes(num) && !result.includes(num)) {
+      result.push(num);
     }
   }
 
-  return count;
+  return result;
 }
 
-console.log(
-  countOccurrences(
-    { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } },
-    "model",
-  ),
-);
+console.log(findIntersection([1, 2, 3], [3, 2, 0]));
+
+//---------X Task--------//
+// function countOccurrences(obj: object, property: string): number {
+//   let count = 0;
+
+//   for (const [key, value] of Object.entries(obj)) {
+//     if (key === property) {
+//       count++;
+//     }
+
+//     if (typeof value === "object" && value !== null) {
+//       count += countOccurrences(value, property);
+//     }
+//   }
+
+//   return count;
+// }
+
+// console.log(
+//   countOccurrences(
+//     { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } },
+//     "model",
+//   ),
+// );
 
 //---------W Task--------//
 // function chunkArray(arr: number[], size: number): number[][] {
