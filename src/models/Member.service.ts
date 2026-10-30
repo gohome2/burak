@@ -26,7 +26,7 @@ class MemberService {
     try {
       const result = await this.memberModel.create(input);
       result.memberPassword = "";
-      return result.toJSON();
+      return result.toJSON<Member>();
     } catch (err) {
       console.error("Error, model:signup", err);
       throw new Errors(HttpCode.BAD_REQUEST, Message.USED_NICK_PHONE);
@@ -44,8 +44,9 @@ class MemberService {
       )
       .exec();
 
-    if (!member) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
-    else if (member.memberStatus === MemberStatus.BLOCK) {
+    if (!member || !member.memberPassword) {
+      throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
+    } else if (member.memberStatus === MemberStatus.BLOCK) {
       throw new Errors(HttpCode.FORBIDDEN, Message.BLOCKED_USER);
     }
 
@@ -59,7 +60,9 @@ class MemberService {
       throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD);
     }
 
-    return await this.memberModel.findById(member._id).lean().exec();
+    const result = await this.memberModel.findById(member._id).lean().exec();
+    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
+    return result;
   }
 
   /** SSR */
@@ -91,7 +94,9 @@ class MemberService {
       )
       .exec();
 
-    if (!member) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
+    if (!member || !member.memberPassword) {
+      throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
+    }
 
     const isMatch = await bcrypt.compare(
       input.memberPassword,
@@ -104,7 +109,9 @@ class MemberService {
       throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD);
     }
 
-    return await this.memberModel.findById(member._id).exec();
+    const result = await this.memberModel.findById(member._id).exec();
+    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
+    return result;
   }
 
   public async getUsers(): Promise<Member[]> {
