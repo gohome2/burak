@@ -81,7 +81,7 @@ class OrderService {
         { $limit: inquiry.limit },
         {
           $lookup: {
-            from: this.orderItemModel.collection.name,
+            from: "orderItems",
             localField: "_id",
             foreignField: "orderId",
             as: "orderItems",
